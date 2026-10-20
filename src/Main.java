@@ -4,12 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1 - Somar");
-        System.out.println("2 - Subtrair");
-        int option = scanner.nextInt();
+        int option;
+        String question;
 
-        switch (option){
-            case 1 -> {
+        do {
+
+            System.out.println("1 - Somar");
+            System.out.println("2 - Subtrair");
+            System.out.println("3 - Multiplicar");
+            System.out.println("4 - Dividir");
+
+            option = scanner.nextInt();
+
+            switch (option){
+                case 1 -> {
                     System.out.println("Número - 1");
                     double number1 = scanner.nextDouble();
 
@@ -18,9 +26,9 @@ public class Main {
 
                     double addition = number1 + number2;
                     System.out.println("Resultado: " + addition);
-            }
+                }
 
-            case 2 -> {
+                case 2 -> {
                     System.out.println("Número - 1");
                     double number1 = scanner.nextDouble();
 
@@ -29,9 +37,9 @@ public class Main {
 
                     double subtraction = number1 - number2;
                     System.out.println("Resultado: " + subtraction);
-            }
+                }
 
-            case 3 -> {
+                case 3 -> {
                     System.out.println("Número - 1");
                     double number1 = scanner.nextDouble();
 
@@ -40,9 +48,9 @@ public class Main {
 
                     double multiplication = number1 * number2;
                     System.out.println("Resultado: " + multiplication);
-            }
+                }
 
-            case 4 -> {
+                case 4 -> {
                     System.out.println("Número - 1");
                     double number1 = scanner.nextDouble();
 
@@ -54,12 +62,15 @@ public class Main {
                         double division = number1 / number2;
                         System.out.println("Resultado: " + division);
                     }
-            }
+                }
+                default -> System.out.println("Selecione uma opção válida");
 
-            default -> {
-                System.out.println("Selecione uma opção válida");
-            }
-        };
+            };
+
+            System.out.println("Deseja continuar utilizando a calculadora (s/n)?");
+            question = scanner.next();
+
+        } while (question.equalsIgnoreCase("s"));
 
     }
 }
