@@ -6,15 +6,26 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int option;
         String question;
-
+        
         do {
+            while (true) {
+                System.out.println("1 - Somar");
+                System.out.println("2 - Subtrair");
+                System.out.println("3 - Multiplicar");
+                System.out.println("4 - Dividir");
 
-            System.out.println("1 - Somar");
-            System.out.println("2 - Subtrair");
-            System.out.println("3 - Multiplicar");
-            System.out.println("4 - Dividir");
+                if (scanner.hasNextInt()) {
+                    option = scanner.nextInt();
 
-            option = scanner.nextInt();
+                    if (option >= 1 && option <= 4) {
+                        break;
+                    }
+                } else {
+                    scanner.next(); // descarta o texto inválido, por exemplo "abc"
+                }
+
+                System.out.println("Opção inválida. Digite um número de 1 a 4.");
+            }
 
             switch (option){
                 case 1 -> {
@@ -63,6 +74,7 @@ public class Main {
                         System.out.println("Resultado: " + division);
                     }
                 }
+
                 default -> System.out.println("Selecione uma opção válida");
 
             };
