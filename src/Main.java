@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int option;
         String question;
-        
+
         do {
             while (true) {
                 System.out.println("1 - Somar");
@@ -29,11 +29,30 @@ public class Main {
 
             switch (option){
                 case 1 -> {
-                    System.out.println("Número - 1");
-                    double number1 = scanner.nextDouble();
+                    double number1;
+                    double number2;
 
-                    System.out.println("Número - 2");
-                    double number2 = scanner.nextDouble();
+                    while (true) {
+                        System.out.println("Número - 1");
+                        if (scanner.hasNextDouble()) {
+                            number1 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
+
+                    while (true) {
+                        System.out.println("Número - 2");
+                        if (scanner.hasNextDouble()) {
+                            number2 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
 
                     double addition = number1 + number2;
                     System.out.println("Resultado: " + addition);
