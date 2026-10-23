@@ -159,10 +159,19 @@ public class Main {
 
             };
 
-            System.out.println("Deseja continuar utilizando a calculadora (s/n)?");
-            question = scanner.next();
+            do {
+                System.out.println("Deseja continuar utilizando a calculadora (s/n)?");
+                question = scanner.next();
+
+                if (!question.equalsIgnoreCase("s")
+                        && !question.equalsIgnoreCase("n")) {
+                    System.out.println("Resposta inválida. Digite s ou n.");
+                }
+            } while (!question.equalsIgnoreCase("s")
+                    && !question.equalsIgnoreCase("n"));
 
         } while (question.equalsIgnoreCase("s"));
+
 
     }
 }
