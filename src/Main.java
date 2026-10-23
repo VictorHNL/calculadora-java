@@ -21,7 +21,7 @@ public class Main {
                         break;
                     }
                 } else {
-                    scanner.next(); // descarta o texto inválido, por exemplo "abc"
+                    scanner.next();
                 }
 
                 System.out.println("Opção inválida. Digite um número de 1 a 4.");
@@ -59,38 +59,99 @@ public class Main {
                 }
 
                 case 2 -> {
-                    System.out.println("Número - 1");
-                    double number1 = scanner.nextDouble();
+                    double number1;
+                    double number2;
 
-                    System.out.println("Número - 2");
-                    double number2 = scanner.nextDouble();
+                    while(true){
+                        System.out.println("Número - 1");
+                        if(scanner.hasNextDouble()){
+                            number1 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
+
+                    while(true){
+                        System.out.println("Número - 2");
+                        if(scanner.hasNextDouble()){
+                            number2 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
 
                     double subtraction = number1 - number2;
                     System.out.println("Resultado: " + subtraction);
                 }
 
                 case 3 -> {
-                    System.out.println("Número - 1");
-                    double number1 = scanner.nextDouble();
+                    double number1;
+                    double number2;
 
-                    System.out.println("Número - 2");
-                    double number2 = scanner.nextDouble();
+                    while(true){
+                        System.out.println("Número - 1");
+                        if(scanner.hasNextDouble()){
+                            number1 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
+
+                    while(true){
+                        System.out.println("Número - 2");
+                        if(scanner.hasNextDouble()){
+                            number2 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
 
                     double multiplication = number1 * number2;
                     System.out.println("Resultado: " + multiplication);
                 }
 
                 case 4 -> {
-                    System.out.println("Número - 1");
-                    double number1 = scanner.nextDouble();
 
-                    System.out.println("Número - 2");
-                    double number2 = scanner.nextDouble();
-                    if (number2 == 0 ){
-                        System.out.println("Não é possivel dividir por zero");
-                    } else {
-                        double division = number1 / number2;
-                        System.out.println("Resultado: " + division);
+                    double number1;
+                    double number2;
+
+                    while(true){
+                        System.out.println("Número - 1");
+                        if(scanner.hasNextDouble()){
+                            number1 = scanner.nextDouble();
+                            break;
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
+                    }
+
+                    while(true){
+                        System.out.println("Número - 2");
+                        if(scanner.hasNextDouble()){
+                            number2 = scanner.nextDouble();
+                            if (number2 == 0){
+                                System.out.println("Não é possivel dividir por zero");
+
+                            } else {
+                                double division = number1 / number2;
+                                System.out.println("Resultado: " + division);
+
+                                break;
+                            }
+
+                        } else {
+                            scanner.next();
+                            System.out.println("Entrada inválida. Digite um número.");
+                        }
                     }
                 }
 
